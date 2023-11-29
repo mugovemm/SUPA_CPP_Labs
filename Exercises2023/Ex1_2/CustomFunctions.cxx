@@ -119,3 +119,25 @@ float fitp (vector<float>x,vector<float>y){
     return all;
 
 }
+float fitq (vector<float>x,vector<float>y){
+    int i = x.size();
+    float xy=0;
+    float a=0;
+    float b=0;
+    float x2=0;
+    float all = 0;
+    float all2 = 0;
+    for(int j=0; j<i ; j++){
+        xy = xy+x[j]*y[j];
+        a = a+x[j];
+        b = b+y[j];
+        x2 = x2+(x[j]*x[j]);
+    }
+    all = ((i*xy)-(a*b))/(x2-(a*b));
+    all2 = ((x2*b)-(xy*a))/((i*x2)-(a*a));
+    float r[2] = {all,all2};
+
+
+    return all2;
+
+}
