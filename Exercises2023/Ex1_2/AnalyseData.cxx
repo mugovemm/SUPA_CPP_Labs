@@ -8,8 +8,11 @@
 
 using namespace std;
 
-float squrfunc(double num, double num1){
-  return std::sqrt(std::pow(num,2)+std::pow(num1,2));
+// float squrfunc(double num, double num1){
+//   return std::sqrt(std::pow(num,2)+std::pow(num1,2));
+// }
+vector<float> squrfunc(vector<float> num, vector<float> num1){
+  return sqrt(pow(num,2)+pow(num1,2));
 }
 
 vector<float> readfile(const string&filenme){
@@ -31,15 +34,11 @@ vector<float> readfile(const string&filenme){
             getline(coeff,b);
             e.push_back(b);
             i++;
-        }
-        cout<< "yourvalues"<<endl; 
+        } 
         for (int j = 0; j < i-1; j++){
             x1.push_back(stof(d[j]));
             y1.push_back(stof(e[j]));
-            cout << x1[j] <<endl;
-            cout << y1[j] <<endl;
         }
-        cout << i <<endl;
         coeff.close();
     }
     else{
@@ -47,7 +46,17 @@ vector<float> readfile(const string&filenme){
     }
     return x1,y1;
 }
+vector<float> prnt(vector<float>numb1,vector<float>numb2){
+    int i = numb1.size();
+    for (int j = 0; j< i-1;j++){
+        cout << numb1[j] <<endl;
+        cout << ',' <<endl;
+        cout << numb2[j] <<endl;
+        return 0;
 
+    }
+
+}
 
 
 int main(){
@@ -88,6 +97,10 @@ int main(){
     vector<float> data1;
     vector<float> data2;
     data1,data2 = readfile("input2D_float.txt");
+    prnt(data1,data2);
+
+    // auto[data]=squrfunc(data1,data2);
+
 
 
 
