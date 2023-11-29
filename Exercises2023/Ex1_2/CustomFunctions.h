@@ -1,9 +1,7 @@
- #ifndef FUNCTIONS_H_INCLUDED
-  #define FUNCTIONS_H_INCLUDED
+#pragma once
 
-  vector<float> readforx(const string&filenme);
-  vector<float> readfory(const string&filenme);
-  void prnt2(vector<float>numb1,vector<float>numb2);
-  vector <float> magn(vector<float>numb1,vector<float>numb2);
-  void prnt1(vector<float> vec);
-  #endif
+ std::vector<float> readforx(const std::string&filenme);
+ std::vector<float> readfory(const std::string&filenme);
+ std::vector<float> magn(std::vector<float>numb1,std::vector<float>numb2);
+ void prnt2(std::vector<float>numb1,std::vector<float>numb2);
+ void prnt1(std::vector<float> vec);
