@@ -79,7 +79,7 @@ vector<float> readfory(const string&filenme){
     return y1;
 }
 
-void prnt(vector<float>numb1,vector<float>numb2){
+void prnt2(vector<float>numb1,vector<float>numb2){
     int i = numb1.size();
     for (int j = 0; j< i-1;j++){
         cout << numb1[j]  << ','<< numb2[j] <<endl;
@@ -88,6 +88,22 @@ void prnt(vector<float>numb1,vector<float>numb2){
 
 }
 
+vector <float> magn(vector<float>numb1,vector<float>numb2){
+    int i = numb1.size();
+    float g;
+    vector<float> z;
+    for (int j = 0; j< i-1;j++){
+        g=sqrt(pow(numb1[j],2)+ pow(numb2[j],2));
+        z.push_back(g);
+    
+    }
+    return z;
+}
+void prnt1(vector<float> vec) {
+    for (float element : vec) {
+        cout << element << endl;
+    }
+}
 
 int main(){
     // vector<string>d;
@@ -124,14 +140,14 @@ int main(){
     // }
     vector<float> datax;
     vector<float> datay;
+    vector<float> dataz;
     datax = readfory("input2D_float.txt");
     datay = readfory("input2D_float.txt");
-    prnt(datax,datay);
-    // printVector(datay);
-    return 0;
-    // cout << 'hello' <<endl;
+    prnt2(datax,datay);
 
-    // auto[data]=squrfunc(data1,data2);
+    dataz = magn(datax,datay);
+    prnt1(dataz);
+    return 0;
 
 
 
