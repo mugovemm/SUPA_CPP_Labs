@@ -5,15 +5,11 @@
 #include <string>
 #include <vector>
 #include <iomanip>
-// #include "CustomFunctions.h"
+#include "CustomFunctions.h"
 using namespace std;
 
-// float squrfunc(double num, double num1){
-//   return std::sqrt(std::pow(num,2)+std::pow(num1,2));
-// }
-// vector<float> squrfunc(vector<float> num, vector<float> num1){
-//   return sqrt(pow(num,2)+pow(num1,2));
-// }
+
+
 
 
 
@@ -83,7 +79,7 @@ vector<float> readfory(const string&filenme){
 
 void prnt2(vector<float>numb1,vector<float>numb2){
     int i = numb1.size();
-    for (int j = 0; j< i-1;j++){
+    for (int j = 0; j< i;j++){
         cout << numb1[j]  << ','<< numb2[j] <<endl;
 
     }
@@ -94,7 +90,7 @@ vector <float> magn(vector<float>numb1,vector<float>numb2){
     int i = numb1.size();
     float g;
     vector<float> z;
-    for (int j = 0; j< i-1;j++){
+    for (int j = 0; j< i;j++){
         g=sqrt(pow(numb1[j],2)+ pow(numb2[j],2));
         z.push_back(g);
     
@@ -105,4 +101,21 @@ void prnt1(vector<float> vec) {
     for (float element : vec) {
         cout << element << endl;
     }
+}
+float fitp (vector<float>x,vector<float>y){
+    int i = x.size();
+    float xy=0;
+    float a=0;
+    float b=0;
+    float x2=0;
+    float all = 0;
+    for(int j=0; j<i ; j++){
+        xy = xy+x[j]*y[j];
+        a = a+x[j];
+        b = b+y[j];
+        x2 = x2+(x[j]*x[j]);
+    }
+    all = ((i*xy)-(a*b))/(x2-(a*b));
+    return all;
+
 }

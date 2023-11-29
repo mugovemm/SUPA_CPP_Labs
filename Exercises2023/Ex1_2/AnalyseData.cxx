@@ -11,9 +11,7 @@ using namespace std;
 float squrfunc(double num, double num1){
   return std::sqrt(std::pow(num,2)+std::pow(num1,2));
 }
-vector<float> squrfunc(vector<float> num, vector<float> num1){
-  return sqrt(pow(num,2)+pow(num1,2));
-}
+
 
 vector<float> readforx(const string&filenme){
     ifstream coeff(filenme);
@@ -81,7 +79,7 @@ vector<float> readfory(const string&filenme){
 
 void prnt2(vector<float>numb1,vector<float>numb2){
     int i = numb1.size();
-    for (int j = 0; j< i-1;j++){
+    for (int j = 0; j< i;j++){
         cout << numb1[j]  << ','<< numb2[j] <<endl;
 
     }
@@ -105,11 +103,10 @@ void prnt1(vector<float> vec) {
     }
 }
 
-float fitp (vector<float>x,vector<float>y){
-    int i = x.size();
-    for(j=0,j<i,)
 
-}
+// float fitq(vector<float>x,vector<float>y){
+
+// }
 
 
 int main(){
@@ -150,9 +147,10 @@ int main(){
     vector<float> dataz;
     datax = readforx("input2D_float.txt");
     datay = readfory("input2D_float.txt");
-    prnt2(datax,datay);
-    dataz = magn(datax,datay);
+    // prnt2(datax,datay);
+    // dataz = magn(datax,datay);
     // prnt1(dataz);
+    cout<< fitp(datax,datay)<<endl;
     return 0;
 
 
