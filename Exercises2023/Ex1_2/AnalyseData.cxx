@@ -105,11 +105,11 @@ using namespace std;
 //     }
 // }
 
-// float fitp (vector<float>x,vector<float>y){
-//     int i = x.size();
-//     for(j=0,j<)
+float fitp (vector<float>x,vector<float>y){
+    int i = x.size();
+    for(j=0,j<i,)
 
-// }
+}
 
 
 int main(){

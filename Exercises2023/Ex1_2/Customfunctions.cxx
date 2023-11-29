@@ -69,7 +69,7 @@ vector<float> readfory(const string&filenme){
             e.push_back(b);
             i++;
         } 
-        for (int j = 0; j < i; j++){
+        for (int j = 0; j < i-1; j++){
             x1.push_back(stof(d[j]));
             y1.push_back(stof(e[j]));
         }
@@ -83,7 +83,7 @@ vector<float> readfory(const string&filenme){
 
 void prnt2(vector<float>numb1,vector<float>numb2){
     int i = numb1.size();
-    for (int j = 0; j< i;j++){
+    for (int j = 0; j< i-1;j++){
         cout << numb1[j]  << ','<< numb2[j] <<endl;
 
     }
@@ -94,7 +94,7 @@ vector <float> magn(vector<float>numb1,vector<float>numb2){
     int i = numb1.size();
     float g;
     vector<float> z;
-    for (int j = 0; j< i;j++){
+    for (int j = 0; j< i-1;j++){
         g=sqrt(pow(numb1[j],2)+ pow(numb2[j],2));
         z.push_back(g);
     
