@@ -11,11 +11,11 @@ using namespace std;
 // float squrfunc(double num, double num1){
 //   return std::sqrt(std::pow(num,2)+std::pow(num1,2));
 // }
-vector<float> squrfunc(vector<float> num, vector<float> num1){
-  return sqrt(pow(num,2)+pow(num1,2));
-}
+// vector<float> squrfunc(vector<float> num, vector<float> num1){
+//   return sqrt(pow(num,2)+pow(num1,2));
+// }
 
-vector<float> readfile(const string&filenme){
+vector<float> readforx(const string&filenme){
     ifstream coeff(filenme);
     vector<float> x1;
     vector<float> y1;
@@ -44,15 +44,45 @@ vector<float> readfile(const string&filenme){
     else{
         cout << "error"<<endl;
     }
-    return x1,y1;
+    return x1;
 }
-vector<float> prnt(vector<float>numb1,vector<float>numb2){
+
+vector<float> readfory(const string&filenme){
+    ifstream coeff(filenme);
+    vector<float> x1;
+    vector<float> y1;
+    vector<string> d;
+    vector<string> e;
+    int i =0;
+    string a,b;
+    if (coeff.is_open())
+    {
+        string line;
+        getline(coeff,line);
+        while(!coeff.eof())
+        {
+            getline(coeff,a,',');
+            d.push_back(a);
+            getline(coeff,b);
+            e.push_back(b);
+            i++;
+        } 
+        for (int j = 0; j < i-1; j++){
+            x1.push_back(stof(d[j]));
+            y1.push_back(stof(e[j]));
+        }
+        coeff.close();
+    }
+    else{
+        cout << "error"<<endl;
+    }
+    return y1;
+}
+
+void prnt(vector<float>numb1,vector<float>numb2){
     int i = numb1.size();
     for (int j = 0; j< i-1;j++){
-        cout << numb1[j] <<endl;
-        cout << ',' <<endl;
-        cout << numb2[j] <<endl;
-        return 0;
+        cout << numb1[j]  << ','<< numb2[j] <<endl;
 
     }
 
@@ -80,12 +110,11 @@ int main(){
     //         e.push_back(b);
     //         i++;
     //     }
-    //     cout<< "yourvalues"<<endl; 
     //     for (int j = 0; j < i-1; j++){
     //         x.push_back(stof(d[j]));
     //         y.push_back(stof(e[j]));
-    //         cout << x[j] <<endl;
-    //         cout << y[j] <<endl;
+    //         // cout << x[j] <<endl;
+    //         // cout << y[j] <<endl;
     //     }
     //     cout << i <<endl;
     //     coeff.close();
@@ -93,11 +122,14 @@ int main(){
     // else{
     //     cout << "error"<<endl;
     // }
-    // return 0;
-    vector<float> data1;
-    vector<float> data2;
-    data1,data2 = readfile("input2D_float.txt");
-    prnt(data1,data2);
+    vector<float> datax;
+    vector<float> datay;
+    datax = readfory("input2D_float.txt");
+    datay = readfory("input2D_float.txt");
+    prnt(datax,datay);
+    // printVector(datay);
+    return 0;
+    // cout << 'hello' <<endl;
 
     // auto[data]=squrfunc(data1,data2);
 
