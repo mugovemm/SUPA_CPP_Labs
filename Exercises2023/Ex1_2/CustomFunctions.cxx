@@ -141,3 +141,21 @@ float fitq (vector<float>x,vector<float>y){
     return all2;
 
 }
+
+float sqrefunc(vector<float>x,vector<float>y,vector<float>ex,vector<float>ey){//calculates the goodness of the fits
+    float q = fitq(x,y);
+    float p = fitp(x,y);
+    int i = x.size();
+    float E=0;
+    for (int j=0; j<i-1;j++){
+        float mm = y[j]-(p*x[j] + q);
+        float m = mm*mm;
+        float n = ey[j]*ey[j];
+        E = E + (m/n);
+
+    }
+    return E;
+    
+
+
+}
