@@ -34,6 +34,7 @@ vector<float> readforx(const string&filenme){ //Reads the x value from the text 
 }
 
 int main(){
-    FiniteFunction fran;
+    int x = 9;
+    cout<<x<<endl;
 
 }
